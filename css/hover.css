@@ -1,0 +1,284 @@
+
+/* Navbar */
+.logo {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo img {
+    transition: transform 0.35s ease;
+}
+
+.logo:hover {
+    color: #ff6b2c;
+}
+
+.logo:hover img {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.nav-links a {
+    transition: color 0.25s ease;
+}
+
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 17px;
+    width: 0;
+    height: 2px;
+    background: #ff6b2c;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+.nav-links a.active::before {
+    display: none;
+}
+
+/* Hero */
+.hero-btn,
+.plan-button,
+.submit-button {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-btn:hover,
+.plan-button:hover,
+.submit-button:hover {
+    background-color: #e95519;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 44, 0.25);
+}
+
+.hero-btn span,
+.learn-more span,
+.submit-button span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.hero-btn:hover span,
+.learn-more:hover span,
+.submit-button:hover span {
+    transform: translateX(5px);
+}
+
+.hero-image {
+    transition: transform 0.7s ease;
+}
+
+.hero:hover .hero-image {
+    transform: scale(1.025);
+}
+
+/* Program Cards */
+.program-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 32px rgba(21, 38, 58, 0.14);
+}
+
+.program-image {
+    overflow: hidden;
+}
+
+.program-image > img {
+    transition: transform 0.5s ease;
+}
+
+.program-card:hover .program-image > img {
+    transform: scale(1.07);
+}
+
+.program-icon {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.program-card:hover .program-icon {
+    transform: translateY(-4px) rotate(-5deg);
+}
+
+.learn-more {
+    transition: color 0.25s ease;
+}
+
+.learn-more:hover {
+    color: #e95519;
+}
+
+/* Membership Plans */
+.plan-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+.plan-card.popular:hover {
+    border-color: #ff6b2c;
+    box-shadow: 0 14px 32px rgba(255, 107, 44, 0.18);
+}
+
+.plan-button {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover .plan-button {
+    background-color: #ff6b2c;
+    color: #fff;
+}
+
+/* Contact Section */
+.contact-image img {
+    transition: transform 0.5s ease;
+}
+
+.contact-image:hover img {
+    transform: scale(1.04);
+}
+
+.contact-item {
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+    background-color: #ff6b2c;
+    color: #fff;
+    transform: scale(1.06);
+}
+
+/* Contact Form */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.contact-form input:hover,
+.contact-form select:hover,
+.contact-form textarea:hover {
+    border-color: #ff6b2c;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #ff6b2c;
+    box-shadow: 0 0 0 3px rgba(255, 107, 44, 0.14);
+}
+
+/* Footer */
+.footer-logo {
+    transition: color 0.3s ease;
+}
+
+.footer-logo:hover {
+    color: #ff6b2c;
+}
+
+.footer-links a {
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #ff6b2c;
+    transform: translateY(-2px);
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) scale(1.08);
+    opacity: 0.8;
+}
+
+.social-links img {
+    transition: filter 0.3s ease;
+}
+
+/* Keyboard Accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #ff6b2c;
+    outline-offset: 4px;
+}
+
+/* Disable Motion When Preferred */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto;
+        animation-duration: 0.01ms;
+        transition-duration: 0.01ms;
+    }
+}
+
+/* Hover Effects Only on Hover-Capable Devices */
+@media (hover: none) {
+    .hero:hover .hero-image,
+    .program-card:hover .program-image > img,
+    .contact-image:hover img {
+        transform: none;
+    }
+}
+
+/* Program Icon Visibility Fix */
+.program-card {
+    overflow: visible;
+}
+
+.program-image {
+    position: relative;
+    overflow: visible;
+    margin-bottom: 0;
+}
+
+.program-image > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none;
+}
+
+.program-icon {
+    position: absolute;
+    left: 24px;
+    bottom: -22px;
+    z-index: 5;
+}
+
+/* Keep the image zoom inside its area */
+.program-card:hover .program-image > img {
+    transform: none;
+}
+
+/* Keep the icon above the image and card content */
+.program-content {
+    position: relative;
+    z-index: 1;
+}
