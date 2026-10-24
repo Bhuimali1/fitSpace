@@ -241,6 +241,7 @@
         z-index: 1002;
     }
 
+
     .navbar .nav-links {
         position: absolute;
         top: 100%;
@@ -259,7 +260,11 @@
 
     .navbar .nav-links.show {
         display: flex;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
     }
+
 
     .nav-links li {
         width: 100%;

@@ -1,4 +1,5 @@
 
+
 /* Navbar */
 .logo {
     transition: color 0.3s ease, transform 0.3s ease;
@@ -40,7 +41,90 @@
     display: none;
 }
 
-/* Buttons */
+/* Navbar entrance animation */
+@keyframes navbarDropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes navbarLogoIn {
+    from {
+        opacity: 0;
+        transform: translateX(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes navbarLinkIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    .navbar {
+        position: relative;
+        z-index: 1000;
+        animation: navbarDropIn 0.65s ease-out both;
+    }
+
+    .navbar .logo {
+        animation: navbarLogoIn 0.55s ease-out 0.15s both;
+    }
+
+@media (max-width: 768px) {
+    .navbar .nav-links.show li {
+        animation: navbarLinkIn 0.3s ease-out both;
+    }
+
+    .navbar .nav-links.show li:nth-child(1) {
+        animation-delay: 0.04s;
+    }
+
+    .navbar .nav-links.show li:nth-child(2) {
+        animation-delay: 0.09s;
+    }
+
+    .navbar .nav-links.show li:nth-child(3) {
+        animation-delay: 0.14s;
+    }
+
+    .navbar .nav-links.show li:nth-child(4) {
+        animation-delay: 0.19s;
+    }
+}
+
+/* Animate hamburger into close icon */
+.menu-toggle span {
+    transition: transform 0.28s ease, opacity 0.2s ease;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* Hero */
 .hero-btn,
 .plan-button,
 .submit-button {
@@ -68,7 +152,6 @@
     transform: translateX(5px);
 }
 
-/* Hero */
 .hero-image {
     transition: transform 0.7s ease;
 }
@@ -79,7 +162,6 @@
 
 /* Program Cards */
 .program-card {
-    overflow: visible;
     transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
@@ -89,37 +171,23 @@
 }
 
 .program-image {
-    position: relative;
     overflow: hidden;
 }
 
 .program-image > img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
 .program-card:hover .program-image > img {
-    transform: scale(1.05);
+    transform: scale(1.07);
 }
 
 .program-icon {
-    position: absolute;
-    left: 24px;
-    bottom: -22px;
-    z-index: 5;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .program-card:hover .program-icon {
     transform: translateY(-4px) rotate(-5deg);
-}
-
-.program-content {
-    position: relative;
-    z-index: 1;
 }
 
 .learn-more {
@@ -212,7 +280,6 @@
 }
 
 .footer-links a {
-    display: inline-block;
     transition: color 0.25s ease, transform 0.25s ease;
 }
 
@@ -244,7 +311,64 @@ button:focus-visible {
     outline-offset: 4px;
 }
 
-/* Back To Top */
+/* Disable Motion When Preferred */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto;
+        animation-duration: 0.01ms;
+        transition-duration: 0.01ms;
+    }
+}
+
+/* Hover Effects Only on Hover-Capable Devices */
+@media (hover: none) {
+    .hero:hover .hero-image,
+    .program-card:hover .program-image > img,
+    .contact-image:hover img {
+        transform: none;
+    }
+}
+
+/* Program Icon Visibility Fix */
+.program-card {
+    overflow: visible;
+}
+
+.program-image {
+    position: relative;
+    overflow: visible;
+    margin-bottom: 0;
+}
+
+.program-image > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none;
+}
+
+.program-icon {
+    position: absolute;
+    left: 24px;
+    bottom: -22px;
+    z-index: 5;
+}
+
+/* Keep the image zoom inside its area */
+.program-card:hover .program-image > img {
+    transform: none;
+}
+
+/* Keep the icon above the image and card content */
+.program-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* JavaScript interactions */
 .back-to-top {
     position: fixed;
     right: 22px;
@@ -282,7 +406,6 @@ button:focus-visible {
     transform: translateY(-3px);
 }
 
-/* Form and Membership Messages */
 .form-status,
 .membership-selection-note {
     margin: 10px 0;
@@ -298,7 +421,6 @@ button:focus-visible {
     border-radius: 3px;
 }
 
-/* Scroll Reveal */
 .reveal-on-scroll {
     opacity: 0;
     transform: translateY(22px);
@@ -310,13 +432,6 @@ button:focus-visible {
     transform: translateY(0);
 }
 
-/* Keep Card Hover Working After Scroll Reveal */
-.program-card.reveal-on-scroll.is-revealed:hover,
-.plan-card.reveal-on-scroll.is-revealed:hover {
-    transform: translateY(-8px);
-}
-
-/* Mobile */
 @media (max-width: 600px) {
     .back-to-top {
         right: 14px;
@@ -326,30 +441,7 @@ button:focus-visible {
     }
 }
 
-/* Touch Devices */
-@media (hover: none) {
-    .hero:hover .hero-image,
-    .program-card:hover .program-image > img,
-    .contact-image:hover img {
-        transform: none;
-    }
-
-    .program-card:hover .program-icon {
-        transform: none;
-    }
-}
-
-/* Respect Reduced Motion Preferences */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto;
-        animation-duration: 0.01ms;
-        animation-iteration-count: 1;
-        transition-duration: 0.01ms;
-    }
-
     .reveal-on-scroll,
     .reveal-on-scroll.is-revealed,
     .back-to-top,
@@ -359,4 +451,10 @@ button:focus-visible {
         transform: none;
         transition: none;
     }
+}
+
+/* Preserve the existing card lift after scroll-reveal finishes */
+.program-card.reveal-on-scroll.is-revealed:hover,
+.plan-card.reveal-on-scroll.is-revealed:hover {
+    transform: translateY(-8px);
 }

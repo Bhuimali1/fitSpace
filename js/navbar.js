@@ -1,38 +1,55 @@
+
 export function initNavbar() {
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
+    const navbar = document.querySelector(".navbar");
 
-    if (!menuToggle || !navLinks) {
+    if (!menuToggle || !navLinks || !navbar) {
         console.error("Navbar elements not found. Check the HTML classes.");
         return;
+    }
+
+    function closeMenu() {
+        navLinks.classList.remove("show");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+    }
+
+    function openMenu() {
+        navLinks.classList.add("show");
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Close navigation menu");
     }
 
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open navigation menu");
 
-    menuToggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("show");
+    menuToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
 
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-        menuToggle.setAttribute(
-            "aria-label",
-            isOpen ? "Close navigation menu" : "Open navigation menu"
-        );
+        if (navLinks.classList.contains("show")) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
 
-    navLinks.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("show");
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Open navigation menu");
-        });
+    navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
     });
 
-    document.addEventListener("keydown", event => {
+    document.addEventListener("click", (event) => {
+        if (
+            navLinks.classList.contains("show") &&
+            !navbar.contains(event.target)
+        ) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
-            navLinks.classList.remove("show");
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Open navigation menu");
+            closeMenu();
         }
     });
 }
