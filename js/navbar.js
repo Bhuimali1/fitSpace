@@ -21,6 +21,19 @@ export function initNavbar() {
         menuToggle.setAttribute("aria-label", "Close navigation menu");
     }
 
+    function scrollToSection(section) {
+        if (!section) return;
+
+        const navbarHeight = navbar.getBoundingClientRect().height;
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+        const targetPosition = sectionTop - navbarHeight - 10;
+
+        window.scrollTo({
+            top: Math.max(0, targetPosition),
+            behavior: "smooth"
+        });
+    }
+
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open navigation menu");
 
@@ -35,7 +48,18 @@ export function initNavbar() {
     });
 
     navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", closeMenu);
+        link.addEventListener("click", (event) => {
+            const href = link.getAttribute("href");
+
+            if (href === "#membership") {
+                event.preventDefault();
+                closeMenu();
+                scrollToSection(document.querySelector(".membership-section"));
+                return;
+            }
+
+            closeMenu();
+        });
     });
 
     document.addEventListener("click", (event) => {
