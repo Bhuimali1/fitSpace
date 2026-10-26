@@ -458,3 +458,20 @@ button:focus-visible {
 .plan-card.reveal-on-scroll.is-revealed:hover {
     transform: translateY(-8px);
 }
+
+.social-links a img {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:nth-child(1):hover img {
+    filter: invert(38%) sepia(92%) saturate(1700%) hue-rotate(190deg);
+}
+
+
+.social-links a:nth-child(3):hover img {
+    filter: invert(20%) sepia(100%) saturate(6000%) hue-rotate(355deg);
+}
+
+.social-links a:nth-child(4):hover img {
+    filter: invert(35%) sepia(90%) saturate(1300%) hue-rotate(175deg);
+}

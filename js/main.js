@@ -3,6 +3,7 @@ import { initMembership } from "./membership.js";
 import { initContact } from "./contact.js";
 import { initScroll } from "./scroll.js";
 import { initAnimations } from "./animation.js";
+import { initHeroSlider } from "./hero-slider.js";
 
 function initFitspace() {
     initNavbar();
@@ -10,6 +11,7 @@ function initFitspace() {
     initContact();
     initScroll();
     initAnimations();
+    initHeroSlider();
 
     const year = document.querySelector("#current-year");
     if (year) {
