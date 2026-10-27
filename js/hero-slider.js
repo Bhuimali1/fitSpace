@@ -13,6 +13,7 @@ export function initHeroSlider() {
 
     if (!label || !heading || !paragraph || !button) return;
 
+        
     const slideData = [
         {
             label: "FITNESS / HEALTH / WELLNESS",
@@ -34,8 +35,16 @@ export function initHeroSlider() {
             paragraph: "Every rep brings you closer to your goals. Build strength, improve your technique and create lasting fitness habits with training designed around your progress.",
             button: "Join FITSPACE",
             link: "#membership"
+        },
+        {
+            label: "DISCIPLINE / FOCUS / RESULTS",
+            heading: "Train With<br><span>Purpose</span>",
+            paragraph: "Build consistency, sharpen your focus and take your training to the next level. FITSPACE helps you turn everyday effort into lasting progress.",
+            button: "Start Training",
+            link: "#programs"
         }
     ];
+
 
     const count = Math.min(slides.length, slideData.length);
     let current = 0;

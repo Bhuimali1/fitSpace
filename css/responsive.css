@@ -988,7 +988,13 @@
     .hero-slides img.hero-slide:nth-child(3) {
         object-position: 70% center;
     }
+
+    
+    .hero-slides img.hero-slide:nth-child(4) {
+        object-position: 70% center;
+    }
 }
+
 
 @media (max-width: 600px) {
     .hero .hero-container {
