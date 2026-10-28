@@ -958,6 +958,11 @@
  /* For hero bnt  */
 @media (max-width: 600px) {
     .hero .hero-content .hero-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        white-space: nowrap;
         width: 190px;
         min-width: 0;
         max-width: 100%;
@@ -969,7 +974,11 @@
     }
 
     .hero .hero-content .hero-btn span {
+        display: inline-block;
+        flex: 0 0 auto;
         font-size: 21px;
+        line-height: 1;
+        transform: translateY(-1.5px);
     }
 }
 

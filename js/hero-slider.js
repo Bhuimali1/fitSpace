@@ -20,14 +20,14 @@ export function initHeroSlider() {
             heading: "Build Your<br><span>Stronger Self</span>",
             paragraph: "At FITSPACE, we believe a healthier you builds a happier tomorrow. Get fit, feel great and reach your goals with our expert trainers and personalized programs.",
             button: "Get Started",
-            link: "#programs"
+            link: "#membership"
         },
         {
             label: "STRENGTH / ENDURANCE / POWER",
             heading: "Push Beyond<br><span>Your Limits</span>",
             paragraph: "Challenge yourself with every movement. Improve your endurance, build full-body strength and discover what you can achieve with focused training at FITSPACE.",
             button: "Explore Programs",
-            link: "#programs"
+            link: "#membership"
         },
         {
             label: "STRENGTH / CONFIDENCE / PROGRESS",
@@ -41,7 +41,7 @@ export function initHeroSlider() {
             heading: "Train With<br><span>Purpose</span>",
             paragraph: "Build consistency, sharpen your focus and take your training to the next level. FITSPACE helps you turn everyday effort into lasting progress.",
             button: "Start Training",
-            link: "#programs"
+            link: "#membership"
         }
     ];
 
