@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +16,10 @@
 
         <header class="auth-topbar">
             <a href="../index.html" class="auth-logo">
-            <img src="../images/logo/logo1.png" alt="" class="auth-logo-icon">
-            <span>FIT</span>SPACE
-           </a>
+                <img src="../images/logo/logo1.png" alt="" class="auth-logo-icon">
+                <span>FIT</span>SPACE
+            </a>
+
             <div class="topbar-right">
                 <nav class="topbar-label" aria-label="Breadcrumb">
                     <a href="../index.html#membership">MEMBERSHIP</a>
@@ -32,69 +34,174 @@
                 <span class="visual-eyebrow">BUILT FOR YOUR NEXT LEVEL</span>
                 <h1>Your <span>next level</span><br>starts here.</h1>
                 <p>More than a gym. A community that helps you get stronger, healthier and more confident every day.</p>
+
                 <div class="registration-benefits">
-                    <div class="benefit-item"><span class="benefit-icon">↗</span><span>Expert<br>Coaching</span></div>
-                    <div class="benefit-item"><span class="benefit-icon">♛</span><span>Premium<br>Facilities</span></div>
-                    <div class="benefit-item"><span class="benefit-icon">▥</span><span>Progress<br>That Lasts</span></div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">↗</span>
+                        <span>Expert<br>Coaching</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">♛</span>
+                        <span>Premium<br>Facilities</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">▥</span>
+                        <span>Progress<br>That Lasts</span>
+                    </div>
                 </div>
             </div>
 
             <section class="auth-card" aria-labelledby="form-title">
-                <a href="../index.html" class="auth-logo card-logo"><span>FIT</span>SPACE</a>
+                <a href="../index.html" class="auth-logo card-logo">
+                    <span>FIT</span>SPACE
+                </a>
+
                 <div class="auth-heading">
                     <h2 id="form-title">Create your account</h2>
                     <p>One step closer to a stronger you.</p>
                 </div>
 
-                <div class="selected-plan">
-                    <span class="plan-crown" aria-hidden="true">♛</span>
-                    <div class="plan-details">
-                        <strong id="plan-name">Loading...</strong>
-                        <span>Full access to gym, classes and more.</span>
+                <div class="plan-selector">
+                    <div class="plan-selector-heading">
+                        <span>CHOOSE YOUR MEMBERSHIP</span>
+                        <p>Select the plan that fits your goals.</p>
                     </div>
-                    <div class="plan-cost"><strong id="plan-price">—</strong><span>/ month</span></div>
-                    <a href="../index.html#membership" class="change-plan">CHANGE</a>
+
+                                    
+                    <div class="plan-options">
+                        <label class="plan-option">
+                            <input type="radio" name="membershipPlan" value="basic" required>
+                            <span class="plan-option-content">
+                                <span class="plan-option-heading">
+                                    <span class="plan-icon" aria-hidden="true">💪</span>
+                                    <span class="plan-option-name">Basic</span>
+                                </span>
+                                <strong>$29<span>/mo</span></strong>
+                            </span>
+                        </label>
+
+                        <label class="plan-option">
+                            <input type="radio" name="membershipPlan" value="standard" required>
+                            <span class="plan-option-content">
+                                <span class="plan-option-heading">
+                                    <span class="plan-icon" aria-hidden="true">🔥</span>
+                                    <span class="plan-option-name">Standard</span>
+                                </span>
+                                <strong>$49<span>/mo</span></strong>
+                            </span>
+                        </label>
+
+                        <label class="plan-option">
+                            <input type="radio" name="membershipPlan" value="premium" required>
+                            <span class="plan-option-content">
+                                <span class="plan-option-heading">
+                                    <span class="plan-icon" aria-hidden="true">👑</span>
+                                    <span class="plan-option-name">Premium</span>
+                                </span>
+                                <strong>$79<span>/mo</span></strong>
+                            </span>
+                        </label>
+                    </div>
+
+
+                  
                 </div>
 
                 <form id="registration-form">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="full-name">Full Name</label>
-                            <input type="text" id="full-name" name="fullName" autocomplete="name" placeholder="Enter your full name" required>
+                            <input
+                                type="text"
+                                id="full-name"
+                                name="fullName"
+                                autocomplete="name"
+                                placeholder="Enter your full name"
+                                required>
                         </div>
+
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter your email" required>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="email"
+                                placeholder="Enter your email"
+                                required>
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label for="mobile">Mobile Number</label>
-                        <input type="tel" id="mobile" name="mobile" autocomplete="tel" placeholder="Enter your 10-digit mobile number" inputmode="numeric" pattern="[6-9][0-9]{9}" minlength="10" maxlength="10" required>
+                        <input
+                            type="tel"
+                            id="mobile"
+                            name="mobile"
+                            autocomplete="tel"
+                            placeholder="Enter your 10-digit mobile number"
+                            inputmode="numeric"
+                            pattern="[6-9][0-9]{9}"
+                            minlength="10"
+                            maxlength="10"
+                            required>
                     </div>
+
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" autocomplete="new-password" minlength="8" placeholder="Create a password" required>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            placeholder="Create a password"
+                            required>
                     </div>
+
                     <div class="form-group">
                         <label for="confirm-password">Confirm Password</label>
-                        <input type="password" id="confirm-password" name="confirmPassword" autocomplete="new-password" minlength="8" placeholder="Confirm your password" required>
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            name="confirmPassword"
+                            autocomplete="new-password"
+                            minlength="8"
+                            placeholder="Confirm your password"
+                            required>
                     </div>
+
                     <label class="terms-check">
                         <input type="checkbox" id="terms" required>
                         <span>I agree to the terms and conditions.</span>
                     </label>
-                    <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
-                    <button type="submit" class="auth-submit">CONTINUE TO CHECKOUT</button>
-                    <p class="auth-footer">Already a member? <a href="login.html">Sign In</a></p>
 
+                    <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+
+                    <button type="submit" class="auth-submit">
+                        CONTINUE TO CHECKOUT
+                    </button>
+
+                    <p class="auth-footer">
+                        Already a member?
+                        <a href="login.html">Sign In</a>
+                    </p>
                 </form>
 
-                <div class="secure-note"><span aria-hidden="true">♢</span> Your details are protected</div>
-                <p class="legal-note">By joining, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
-                
+                <div class="secure-note">
+                    <span aria-hidden="true">♢</span>
+                    Your details are protected
+                </div>
+
+                <p class="legal-note">
+                    By joining, you agree to our
+                    <a href="terms.html">Terms</a> and
+                    <a href="privacy.html">Privacy Policy</a>.
+                </p>
             </section>
         </section>
     </main>
+
     <script src="../js/auth.js"></script>
 </body>
 </html>

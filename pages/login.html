@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in to your FITSPACE account and manage your fitness membership.">
+    <title>Sign In | FITSPACE</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <main class="login-screen">
+        <img
+            class="login-background"
+            src="../images/registration/reg2.jpg"
+            alt=""
+            aria-hidden="true"
+        >
+        <div class="login-overlay"></div>
+
+        <header class="auth-topbar">
+            <a href="../index.html" class="auth-logo">
+                <img src="../images/logo/logo1.png" alt="" class="auth-logo-icon">
+                <span>FIT</span> SPACE
+            </a>
+
+            <div class="topbar-right">
+                <nav class="topbar-label" aria-label="Account navigation">
+                    <a href="../index.html#membership">MEMBERSHIP</a>
+                    <span class="breadcrumb-arrow">›</span>
+                    <a href="register.html" class="signup-link">SIGN UP</a>
+                </nav>
+            </div>
+        </header>
+
+        <section class="login-content">
+            <div class="login-card">
+                <a href="../index.html" class="login-brand">
+                    <span>FIT</span> SPACE
+                </a>
+
+                <div class="login-heading">
+                    <span class="login-eyebrow">WELCOME BACK</span>
+                    <h1>Welcome back.</h1>
+                    <p>Sign in to continue your fitness journey.</p>
+                </div>
+
+                <form id="login-form">
+                    <div class="login-form-group">
+                        <label for="login-email">Email Address</label>
+                        <input
+                            type="email"
+                            id="login-email"
+                            name="email"
+                            autocomplete="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+                    </div>
+
+                    <div class="login-form-group">
+                        <label for="login-password">Password</label>
+                        <input
+                            type="password"
+                            id="login-password"
+                            name="password"
+                            autocomplete="current-password"
+                            placeholder="Enter your password"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <div class="login-options">
+                        <label class="remember-option">
+                            <input type="checkbox" id="remember-me" name="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+
+                        <a href="forgot-password.html" class="forgot-link">
+                            Forgot password?
+                        </a>
+                    </div>
+
+                    <p
+                        id="login-message"
+                        class="login-message"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                    <button type="submit" class="login-submit">
+                        Sign In
+                    </button>
+                </form>
+
+                <p class="login-signup">
+                    Don't have an account?
+                    <a href="register.html?plan=standerd">Join FITSPACE</a>
+                </p>
+
+                <a href="../index.html" class="login-back">
+                    ← Back to Home
+                </a>
+
+                <div class="login-secure-note">
+                    <span aria-hidden="true">◇</span>
+                    Your fitness journey continues here.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

@@ -6,39 +6,69 @@ const plans = {
 };
 
 const params = new URLSearchParams(window.location.search);
-const selectedPlan = params.get("plan")?.toLowerCase();
-const plan = plans[selectedPlan];
+const requestedPlan = params.get("plan")?.toLowerCase();
 
-const planName = document.querySelector("#plan-name");
-const planPrice = document.querySelector("#plan-price");
 const registrationForm = document.querySelector("#registration-form");
 const formMessage = document.querySelector("#form-message");
+const planOptions = document.querySelectorAll(
+    'input[name="membershipPlan"]'
+);
 
-if (!plan) {
-    planName.textContent = "Choose a Plan";
-    planPrice.textContent = "—";
-    registrationForm.querySelector('button[type="submit"]').disabled = true;
-    formMessage.textContent = "Please select a membership plan first.";
-} else {
-    planName.textContent = plan.name;
-    planPrice.textContent = `$${plan.price}`;
+function getSelectedPlan() {
+    const selectedOption = document.querySelector(
+        'input[name="membershipPlan"]:checked'
+    );
+
+    return selectedOption ? plans[selectedOption.value] : null;
 }
+
+function showMessage(message) {
+    formMessage.textContent = message;
+}
+
+if (plans[requestedPlan]) {
+    const matchingOption = document.querySelector(
+        `input[name="membershipPlan"][value="${requestedPlan}"]`
+    );
+
+    if (matchingOption) {
+        matchingOption.checked = true;
+    }
+}
+
+planOptions.forEach(option => {
+    option.addEventListener("change", () => {
+        showMessage("");
+    });
+});
 
 registrationForm.addEventListener("submit", event => {
     event.preventDefault();
+    showMessage("");
 
-    if (!plan) return;
+    const selectedPlan = getSelectedPlan();
+
+    if (!selectedPlan) {
+        showMessage("Please select a membership plan before continuing.");
+
+        document.querySelector(".plan-selector").scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        return;
+    }
 
     const password = document.querySelector("#password").value;
     const confirmPassword = document.querySelector("#confirm-password").value;
 
     if (password !== confirmPassword) {
-        formMessage.textContent = "Your passwords do not match.";
+        showMessage("Your passwords do not match.");
+        document.querySelector("#confirm-password").focus();
         return;
     }
 
-    formMessage.textContent =
-        "The form is valid. Account creation will be enabled when authentication is connected.";
+    showMessage(
+        `Your details are valid and your ${selectedPlan.name} plan is selected. Account creation and payment will be enabled when the backend is connected.`
+    );
 });
-
-
